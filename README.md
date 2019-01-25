@@ -1,5 +1,5 @@
 # project-one
-Group Project - Project 1
+Shawn Holcomb, Kellan Benn, Colin Westmoreland
 
 # Description
 tbd
@@ -8,4 +8,7 @@ tbd
 tbd
 
 # APIs Used
+tbd
+
+# Tasks
 tbd
