@@ -22,4 +22,4 @@ Brewery DB - Database of types of beers, breweries and all things beer related<b
 Google Maps API - Utilized to located local breweries/pubs based on user's location<br/>
 
 # Tasks
-tbd
+Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projects/1
