@@ -6,10 +6,15 @@ Project One is a web app that helps users discover new and interesting beer reco
 
 # Sketch
 Age Verification Page
+
 ![Age Verification Form](http://i63.tinypic.com/11w94iv.png)
+
 Questionnaire Example
+
 ![Questionnaire Example](http://i67.tinypic.com/2h6g7k8.png)
+
 Results page
+
 ![Results Page](http://i67.tinypic.com/whb32x.png)
 
 # APIs Used
