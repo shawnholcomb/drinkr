@@ -18,8 +18,8 @@ Project One is a web app that helps users discover new and interesting beer reco
 ![Results Page](http://i67.tinypic.com/whb32x.png)
 
 # APIs Used
-Brewery DB - Database of types of beers, breweries and all things beer related
-Google Maps API - Utilized to located local breweries/pubs based on user's location
+Brewery DB - Database of types of beers, breweries and all things beer related<br/>
+Google Maps API - Utilized to located local breweries/pubs based on user's location<br/>
 
 # Tasks
 tbd
