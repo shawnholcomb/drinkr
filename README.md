@@ -1,4 +1,4 @@
-# project-one
+# Project One (name goes here)
 Shawn Holcomb, Kellan Benn, Colin Westmoreland
 
 # Description
