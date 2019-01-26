@@ -1,5 +1,5 @@
 # drinkr
-![Logo](http://i66.tinypic.com/2q33jhw.jpg)
+![Logo](http://i66.tinypic.com/2q33jhw.jpg)<br/>
 Shawn Holcomb, Kellan Benn, Colin Westmoreland
 
 # Description
