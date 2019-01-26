@@ -1,8 +1,9 @@
-# Project One (name goes here)
+# drinkr
+![Logo](http://i66.tinypic.com/2q33jhw.jpg)
 Shawn Holcomb, Kellan Benn, Colin Westmoreland
 
 # Description
-Project One is a web app that helps users discover new and interesting beer recommendations based on their tastes and preferences.  Utilizing a short questionnaire Project One provides a curated style recommendation, provides a map outlining local breweries and pubs and lists specific beverage recommendations for the user. 
+drinkr is a web app that helps users discover new and interesting beer recommendations based on their tastes and preferences.  Utilizing a short questionnaire drinkr offers a curated style recommendation, provides a map outlining local breweries and pubs and lists specific beverage recommendations for the user. 
 
 # Sketch
 **Age Verification Page**
