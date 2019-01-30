@@ -181,6 +181,14 @@ p {
     padding: 30px 0;
 }
 
+#selected-style-description {
+    margin-bottom: 20px;
+}
+
+#selected-style-image {
+    margin-bottom: 20px;
+}
+
 .retake-quiz-btn {
     background: #169aef;
     color: #f5f5f5;
@@ -242,8 +250,10 @@ td a {
 }
 
 .maps-div {
-    background-color: #363636;
-    padding: 30px 0;
+    background: url(../images/map-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: auto;
+    padding: 45px 0;
 }
 
 .maps-text {
@@ -260,7 +270,7 @@ td a {
     background-attachment: fixed;
     height: 500px;
     position: relative;
-    padding: 30px 0;
+    /* padding: 50px 0; */
 }
 
 .social-overlay {
@@ -275,13 +285,14 @@ td a {
 .social-text {
     color: #f5f5f5;
     font-family: 'Cabin', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     text-shadow: 2px 2px 1px #262626;
+    padding-top: 18px;
 }
 
 #insta {
-    position: absolute;
-    top: 130px;
+    width: 100%;
+    margin-top: 40px;
 }
 
 footer {
