@@ -1,23 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>drinkr · Discover your new favorite beer</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    
-    
-    
-    <script src="assets/js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Open+Sans" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
 </head>
-<body>
-    <h1>Test</h1>
-    
+
+<body class="bg-still">
+
+    <video autoplay muted loop id="bg-video">
+        <source src="assets/images/beer-pour.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay">
+        <header>
+            <div class="row navbar clear-bg p-0">
+                <div class="logo">
+                    <img src="assets/images/drinkr-logo.png" class="header-logo">
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="title-header">With more than 19,000 independent breweries around the globe there are a lot of
+                        options when it comes to choosing a beer.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="title-secondary"><span class="title-span">drinkr</span> is here to help. Just answer a
+                        few
+                        questions and you can receive personalized recommendations based on your tastes. Click below to
+                        get
+                        started!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 start-quiz">
+                    <a href="results.html">
+                        <button id="quiz-btn">Start Quiz</button>
+                    </a>
+                </div>
+            </div>
 </body>
+
 </html>
