@@ -3,7 +3,7 @@ var url = "http://api.brewerydb.com/v2/" + searchTerm + "/?key=7944356e321284ae7
 
 
 
-    $.ajax(url)
-        .then(function (results) {
+$.ajax(url)
+  .then(function (results) {
 
-            var result = results.data;
+      var result = results.data;
