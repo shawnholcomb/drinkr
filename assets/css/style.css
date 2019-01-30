@@ -4,9 +4,21 @@
 }
 
 body {
-    background: url("../images/body-bg.jpg");
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+  background: url("../images/body-bg.jpg");
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.text-muted {
+  color: white;
+}
+
+.last-seconds {
+  color: red;
+}
+
+.option {
+  margin: 15px;
 }
 
 header {
@@ -244,3 +256,4 @@ button:focus {
 }
 
 @media only screen and (max-width: 575px) {}
+
