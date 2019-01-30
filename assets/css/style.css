@@ -1,150 +1,31 @@
+/* Reset */
+
 * {
     box-sizing: border-box;
     max-width: 100%;
 }
 
 body {
-  background: url("../images/body-bg.jpg");
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+  background-color: #f5f5f5;
 }
 
-.text-muted {
-  color: white;
-}
 
-.last-seconds {
-  color: red;
-}
+/* Age Modal */
 
-.option {
-  margin: 15px;
-}
-
-header {
+.modal {
+    position: fixed;
+    bottom: 0;
+    background: rgba(38, 38, 38, 0.65);
     width: 100%;
+    height: 100%;
+    display: none;
 }
 
-.row {
-    margin-bottom: 15px;
-}
 
-a {
-    color: #fff;
-}
+/* Index Styling */
 
-a:hover,
-#retake-quiz:hover {
-    color: #efd916;
-    text-decoration: none;
-}
-
-.navbar {
-    background-color: #169aef;
-    display: flex;
-    justify-content: center;
-}
-
-.clear-bg {
-    background: none;
-}
-
-.header-logo {
-    height: 60px;
-    padding-top: 15px;
-    padding-bottom: 5px;
-}
-
-#retake-quiz {
-    color: #169aef;
-}
-
-#selected-style-name {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-#selected-style-image,
-#map-img {
-    width: 100%;
-}
-
-table {
-    table-layout: auto;
-    width: 100%; 
-}
-
-td {
-    background:#444;
-    border: 2px solid #000;
-    color: #fff;
-    display: flex;
-    padding: 10px;
-    margin-bottom: 3px;
-    min-height: 150px;
-}
-
-td a {
-    color: #169aef;
-}
-
-.beer-logo {
-    position: relative;
-    width: 120px;
-    height: auto;
-    overflow: hidden;
-}
-
-.item {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.item img {
-    -webkit-transition: 0.6s ease;
-    transition: 0.6s ease;
-}
-
-.beer-logo:hover .item img {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-}
-
-.recommended-beer-label {
-    width: 120px;
-}
-
-footer {
-    background-color: #169aef;
-    color: #fff;
-    font-size: 11px;
-    display: flex;
-    padding-top: 10px;
-    /* padding-bottom: 20px; */
-}
-
-#social-media {
-    justify-content: center;
-}
-
-#copyright {
-    margin-bottom: 0;
-    font-size: 14px;
-}
-
-#design {
-    margin-bottom: 30px;
-}
-
-li {
-    display: inline;
-    padding: 0 10px;
-    margin: 0 15px;   
-    font-size: 40px; 
-}
-
-/* Video styling */
 #bg-video {
     position: absolute;
     top: 40%; 
@@ -164,8 +45,8 @@ li {
 .video-overlay {
     position: fixed;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.65);
-    color: #f1f1f1;
+    background: rgba(38, 38, 38, 0.65);
+    color: #f5f5f5;
     width: 100%;
     height: 100%;
 }
@@ -194,8 +75,8 @@ li {
 
 #quiz-btn {
     background: none;
-    color: #fff;
-    border: 2px solid #fff;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
     padding: 5px 20px;
     border-radius: 25px;
     transition: 0.3s;
@@ -209,27 +90,256 @@ button:focus {
     outline: none;
 }
 
+header {
+    width: 100%;
+}
+
+a {
+    color: #f5f5f5;
+}
+
+a:hover,
+#retake-quiz:hover {
+    color: #e0245e;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #169aef;
+    display: flex;
+    justify-content: center;
+}
+
+.clear-bg {
+    background: none;
+}
+
+.header-logo {
+    height: 60px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+
+/* Questionaire Styling */
+
+.text-muted {
+    color: #f5f5f5;
+}
+
+.last-seconds {
+    color: red;
+}
+
+.option {
+    margin: 15px;
+}
+
+/* Results Page Styling */
+
+
+p {
+    margin-bottom: 2px;
+}
+
+.bg-parallax {
+    background: url(../images/bg-taps.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    position: relative;
+}
+
+.parallax-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.30);
+    color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
+
+.based-on {
+    color: #f5f5f5;
+    width: 100%;
+    font-family: 'Cabin', sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 2px 1px #262626;
+    position: absolute;
+    top: 40vh;
+}
+
+.selected-style-text {
+    margin-bottom: 20px;
+    color: #262626;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
+}
+
+.selected-style-div {
+    padding: 30px 0;
+}
+
+.retake-quiz-btn {
+    background: #169aef;
+    color: #f5f5f5;
+    padding: 5px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.retake-quiz-btn:hover {
+    background: #e0245e;
+}
+
+#selected-style-image,
+#map-img {
+    width: 100%;
+    border: 1px solid #262626
+}
+
+.recommended-beers-div {
+    padding-bottom: 25px;
+}
+
+table {
+    table-layout: auto;
+    width: 100%; 
+}
+
+td {
+    background: url(../images/body-bg.jpg);
+    border-top: 1px solid #262626;
+    color: #262626;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 3px;
+    min-height: 120px;
+}
+
+td a {
+    color: #169aef;
+}
+
+.recommended-beer-row {
+    position: relative;
+    width: 120px;
+    height: auto;
+}
+
+#recommended-beer-name,
+#recommended-beer-company {
+    font-size: 16px;
+}
+
+#recommended-beer-name {
+    font-weight: bolder;
+}
+
+#recommended-beer-description {
+    font-size: 14px;
+}
+
+.maps-div {
+    background-color: #363636;
+    padding: 30px 0;
+}
+
+.maps-text {
+    margin-bottom: 15px;
+    color: #f5f5f5;
+    font-family: 'Cabin', sans-serif;
+    font-size: 50px;
+}
+
+.social {
+    background: url(../images/bg-beerhops.jpg) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    height: 500px;
+    position: relative;
+    padding: 30px 0;
+}
+
+.social-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.30);
+    color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
+
+.social-text {
+    color: #f5f5f5;
+    font-family: 'Cabin', sans-serif;
+    font-size: 60px;
+    text-shadow: 2px 2px 1px #262626;
+}
+
+#insta {
+    position: absolute;
+    top: 135px;
+}
+
+footer {
+    background-color: #169aef;
+    color: #f5f5f5;
+    font-size: 11px;
+    display: flex;
+    padding-top: 10px;
+}
+
+#social-media {
+    justify-content: center;
+}
+
+#copyright {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+#design {
+    margin-bottom: 30px;
+}
+
+#design a {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+li {
+    display: inline;
+    padding: 0 10px;
+    margin: 0 15px;   
+    font-size: 40px; 
+}
+
 /* Media Queries */
-@media only screen and (max-width: 991px) {
+
+/* @media only screen and (max-width: 991px) {
     .beer-logo {
         width: 100px;
     }
 
     .recommended-beer-label {
-        width: 100px;
+        width: px;
     }
 
-    h5 {
+    #recommended-beer-name,
+    #recommended-beer-company {
         font-size: 14px;
     }
 
-    h6 {
+    #recommended-beer-company {
         font-size: 14px;
         line-height: 130%;
     }
 
     td {
-        min-height: 150px;
+        min-height: 120px;
     }    
 }
 
@@ -255,5 +365,4 @@ button:focus {
     }
 }
 
-@media only screen and (max-width: 575px) {}
-
+@media only screen and (max-width: 575px) {} */
