@@ -1,3 +1,5 @@
+var selectionTypeArr = ["ipa", "stout", "pilsner", "lager"];
+
 var selections =[ // descriptions from beeradvocate.com
   {name: "Imperial IPA",
   description: "We have west coast American brewers to thank for this somewhat reactionary style. Take an India Pale Ale and feed it steroids, and you'll end up with a Double or Imperial IPA. Although generally recognizable alongside its sister styles in the IPA family, you should expect something more robust, malty, and alcoholic with a characteristically intense hop profile in both taste and aroma. In short, these are boldly flavored, medium-bodied beers that range in color from deep gold to medium amber. The 'imperial' usage comes from Russian Imperial Stout, a style of strong Stout originally brewed in England during the late 1700s for the Russian imperial court. Today Double IPA is often the preferred name in the United States.",
@@ -13,52 +15,15 @@ var selections =[ // descriptions from beeradvocate.com
   image: "assets/images/lager.jpg"},
 ];
 
-// function renderSelectedType (type) {
-
-//   $("#selected-style-text").text(selections[type].name);
-//   $("#selected-style-description").text(selections[type].description);
-//   $("#selected-style-image").attr("src", selections[type].image);
-// }
+// click handler for buttons to change data in suggestions area of site.
 
 $(".options").on("click", function () {
-  $("#selected-style-name").text(selections[0].name);
-  $("#selected-style-description").text(selections[0].description);
-  $("#selected-style-image").attr("src", selections[0].image);
+  var selectedTypeIndex = selectionTypeArr.indexOf(this.id);
 
+  $("#selected-style-name").text(selections[selectedTypeIndex].name);
+  $("#selected-style-description").text(selections[selectedTypeIndex].description);
+  $("#selected-style-image").attr("src", selections[selectedTypeIndex].image);
+});
 
-
-
-  console.log(this).attr("id");
-  // console.log(this).data("index");
-  $("#selected-style-name").text(selections[0].name);
-  $("#selected-style-description").text(selections[0].description);
-  $("#selected-style-image").attr("src", selections[0].image);
-})
-
-$("#stout").click(function () {
-  $("#selected-style-name").text(selections[1].name);
-  $("#selected-style-description").text(selections[1].description);
-  $("#selected-style-image").attr("src", selections[1].image);
-})
-
-$("#pilsner").click(function () {
-  $("#selected-style-name").text(selections[2].name);
-  $("#selected-style-description").text(selections[2].description);
-  $("#selected-style-image").attr("src", selections[2].image);
-})
-
-$("#lager").click(function () {
-  $("#selected-style-name").text(selections[3].name);
-  $("#selected-style-description").text(selections[3].description);
-  $("#selected-style-image").attr("src", selections[3].image);
-})
-
-
-
-// $.ajax(url)
-//   .then(function (results) {
-
-//       var result = results.data;
-// //             var result = results.data;
-// //         });
+// API Time!
 
