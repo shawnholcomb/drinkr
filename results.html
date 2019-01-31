@@ -16,187 +16,252 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css">
 
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
+
     <header>
         <div class="row navbar mx-0 p-0">
             <div class="logo">
-                <img src="assets/images/drinkr-logo.png" class="header-logo">
+                <img src="assets/images/drinkr-logo.png" alt="background-image" class="header-logo">
             </div>
         </div>
     </header>
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-sm-6 text-left">
-                <h5>Based on your answers we recommend</h5>
-            </div>
-            <div class="col-sm-6 text-right">
-                <h5>Click <a href="index.html" id="retake-quiz">HERE</a> to take the quiz again.</h5>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-sm-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3 id="selected-style-name">Imperial IPA</h3>
+    <div class="bg-parallax">
+        <div class="parallax-overlay">
+            <div class="container">
+                <div class="abs-container">
+                    <div class="row mx-0">
+                        <div class="col-12 text-center">
+                            <p class="based-on">Based on your answers, our recommendation is...<p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <p id="selected-style-description">We have west coast American brewers to thank for this somewhat reactionary style. Take an India Pale Ale and feed it steroids, and you'll end up with a Double or Imperial IPA. Although generally recognizable alongside its sister styles in the IPA family, you should expect something more robust, malty, and alcoholic with a characteristically intense hop profile in both taste and aroma. In short, these are boldly flavored, medium-bodied beers that range in color from deep gold to medium amber. The "imperial" usage comes from Russian Imperial Stout, a style of strong Stout originally brewed in England during the late 1700s for the Russian imperial court. Today Double IPA is often the preferred name in the United States.</p>
+                    <div class="row mx-0">
+                        <div class="col-12 text-center">
+                            <p class="based-on-arrow"><a href="#ssd"><i class="fas fa-angle-double-down faa-falling animated"></i></a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <img src="assets/images/ipa.jpg" id="selected-style-image">
-            </div>
         </div>
+    </div>
 
-        <div class="row" id="recommended-beers">
-            <div class="col-12">
-                <h3>Here are a few that you may enjoy</h3>
+    <div class="selected-style-div" id="ssd">
+        <div class="container">
+            <div class="row mx-0">
+                <div class="col-lg-8 col-md-12">
+                    
+                    <row class="d-flex my-1">
+                        <p>Click a button</p>
+                        <div class="col-3">
+                            <button class="options" id="ipa" data-id="0">IPA</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="options" id="stout" data-value="1">Stout</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="options" id="pilsner" data-value="2">Pilsner</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="options" id="lager" data-value="3">Lager</button>
+                        </div>
+                    </row>
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="selected-style-text" id="selected-style-name"></h3>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p id="selected-style-description"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <img src="" id="selected-style-image">
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-12 mx-auto">
+                    <p>Feeling adventurous? Want to retake the quiz? <a href="index.html"><button class="retake-quiz-btn">Click
+                                Here</button></a></p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <table id="recommended-beer-table">
-                    <td>
-                        <div class="beer-logo col-md-2 p-0">
-                            <div class="item">
-                                <a href="https://www.dogfish.com/" target="_blank">
-                                    <img src="https://untappd.akamaized.net/site/beer_logos/beer-8056_7fcfd_sm.jpeg"
-                                        class="recommended-beer-label">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <h5>90 Minute Imperial IPA</h5>
-                            <a href="https://www.dogfish.com/" target="_blank">
-                                <h5>Dogfish Head Craft Brewery</h5>
-                            </a>
-                            <h6>Esquire Magazine calls our 90 Minute IPA "perhaps the best IPA in America." An imperial
-                                IPA best savored from a snifter, 90 Minute has a great malt backbone that stands up to
-                                the extreme hopping rate.</h6>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer-logo col-md-2 p-0">
-                            <div class="item">
-                                <a href="https://sixpoint.com/" target="_blank">
-                                    <img src="https://untappd.akamaized.net/site/beer_logos/beer-_117064_sm.jpeg" class="recommended-beer-label">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <h5>Resin</h5>
-                            <a href="https://sixpoint.com/" target="_blank">
-                                <h5>Sixpoint Brewery</h5>
-                            </a>
-                            <h6>"Resin" is named after the sticky ooze that secretes from the lupulin glands of the hop
-                                cone.</h6>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer-logo col-md-2 p-0">
-                            <div class="item">
-                                <a href="https://www.greenflashbrew.com/" target="_blank">
-                                    <img src="https://untappd.akamaized.net/site/beer_logos/beer-646818_228c6_sm.jpeg"
-                                        class="recommended-beer-label">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <h5>West Coast IPA</h5>
-                            <a href="https://www.greenflashbrew.com/" target="_blank">
-                                <h5>Green Flash Brewing Company</h5>
-                            </a>
-                            <h6>As craft beer pioneers, we embarked on an expedition to brew the benchmark West Coast
-                                IPA. We ventured into the unknown and struck gold, discovering a tantalizing menagerie
-                                of hops. Simcoe for tropical and grapefruit zest, Columbus for hop pungency, Centennial
-                                for pine notes, Citra for citrus zest and Cascade for floral aroma are layered
-                                throughout the brewing process. West Coast IPA® exemplifies the Green Flash spirit of
-                                adventure and discovery.</h6>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer-logo col-md-2 p-0">
-                            <div class="item">
-                                <a href="https://www.boulevard.com/" target="_blank">
-                                    <img src="https://untappd.akamaized.net/site/beer_logos/beer-933141_d4f4f_sm.jpeg"
-                                        class="recommended-beer-label">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <h5>The Calling</h5>
-                            <a href="https://www.boulevard.com/" target="_blank">
-                                <h5>Boulevard Brewing Co.</h5>
-                            </a>
-                            <h6>Our most heavily hopped beer ever bursts forth with unmistakable tropical fruit and
-                                pine
-                                hop aromas and flavor supported with a slightly sweet malt character, tapering to a
-                                crisp, dry finish. Heed your call and enjoy.</h6>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="beer-logo col-md-2 p-0">
-                            <div class="item">
-                                <a href="https://foundersbrewing.com/" target="_blank">
-                                    <img src="https://untappd.akamaized.net/site/beer_logos/beer-FoundersDoubleTrouble.jpg"
-                                        class="recommended-beer-label">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-10">
-                            <h5>Double Trouble</h5>
-                            <a href="https://foundersbrewing.com/" target="_blank">
-                                <h5>Founders Brewing Co.</h5>
-                            </a>
-                            <h6>Our Double or Imperial IPA that is brewed to turn your world upside down. This beer is
-                                brewed with Simcoe hops which are citrusy and buttery at the same time. Pungent
-                                aromatics up front paired with a malt-balanced backbone and a smooth, bitter finish.</h6>
-                        </div>
-                    </td>
-                </table>
-            </div>
-        </div>
+    </div>
 
-        <div class="row" id="maps">
-            <div class="col-12">
-                <h3>Find Local Breweries & Pubs</h3>
+    <div class="recommended-beers-div">
+        <div class="container">
+            <div class="row mx-0">
+                <div class="col-12">
+                    <h3 class="selected-style-text">Here are a few that you may enjoy</h3>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-12">
+                    <table id="recommended-beer-table">
+                        <td>
+                            <div class="recommended-beer-row col-md-2 p-0">
+                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-8056_7fcfd_sm.jpeg" id="recommended-beer-label">
+                            </div>
+                            <div class="col-md-10">
+                                <p class="recommended-beer-name">90 Minute Imperial IPA</p>
+                                <a href="https://www.dogfish.com/" class="recommended-beer-url" target="_blank">
+                                    <p class="recommended-beer-company">Dogfish Head Craft Brewery</p>
+                                </a>
+                                <p class="recommended-beer-description">Esquire Magazine calls our 90 Minute IPA
+                                    "perhaps
+                                    the best IPA in America." An
+                                    imperial
+                                    IPA best savored from a snifter, 90 Minute has a great malt backbone that stands up
+                                    to
+                                    the extreme hopping rate.</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recommended-beer-row col-md-2 p-0">
+                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-_117064_sm.jpeg" class="recommended-beer-label">
+                            </div>
+                            <div class="col-md-10">
+                                <p class="recommended-beer-name">Resin</p>
+                                <a href="https://sixpoint.com/" target="_blank" class="recommended-beer-url">
+                                    <p class="recommended-beer-company">Sixpoint Brewery</p>
+                                </a>
+                                <p class="recommended-beer-description">"Resin" is named after the sticky ooze that
+                                    secretes from the lupulin glands of the
+                                    hop
+                                    cone.</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recommended-beer-row col-md-2 p-0">
+                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-646818_228c6_sm.jpeg"
+                                    class="recommended-beer-label">
+                            </div>
+                            <div class="col-md-10">
+                                <p class="recommended-beer-name">West Coast IPA</p>
+                                <a href="https://www.greenflashbrew.com/" target="_blank" class="recommended-beer-url">
+                                    <p class="recommended-beer-company">Green Flash Brewing Company</p>
+                                </a>
+                                <p class="recommended-beer-description">As craft beer pioneers, we embarked on an
+                                    expedition to brew the benchmark West
+                                    Coast
+                                    IPA. We ventured into the unknown and struck gold, discovering a tantalizing
+                                    menagerie
+                                    of hops. Simcoe for tropical and grapefruit zest, Columbus for hop pungency,
+                                    Centennial
+                                    for pine notes, Citra for citrus zest and Cascade for floral aroma are layered
+                                    throughout the brewing process. West Coast IPA® exemplifies the Green Flash spirit
+                                    of
+                                    adventure and discovery.</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recommended-beer-row col-md-2 p-0">
+                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-933141_d4f4f_sm.jpeg"
+                                    class="recommended-beer-label">
+                            </div>
+                            <div class="col-md-10">
+                                <p class="recommended-beer-name">The Calling</p>
+                                <a href="https://www.boulevard.com/" target="_blank" class="recommended-beer-url">
+                                    <p class="recommended-beer-company">Boulevard Brewing Co.</p>
+                                </a>
+                                <p class="recommended-beer-description">Our most heavily hopped beer ever bursts forth
+                                    with unmistakable tropical fruit and
+                                    pine
+                                    hop aromas and flavor supported with a slightly sweet malt character, tapering to a
+                                    crisp, dry finish. Heed your call and enjoy.</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recommended-beer-row col-md-2 p-0">
+                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-FoundersDoubleTrouble.jpg"
+                                    class="recommended-beer-label">
+                            </div>
+                            <div class="col-md-10">
+                                <p class="recommended-beer-name">Double Trouble</p>
+                                <a href="https://foundersbrewing.com/" target="_blank" class="recommended-beer-url">
+                                    <p class="recommended-beer-company">Founders Brewing Co.</p>
+                                </a>
+                                <p class="recommended-beer-description">Our Double or Imperial IPA that is brewed to
+                                    turn
+                                    your world upside down. This beer
+                                    is
+                                    brewed with Simcoe hops which are citrusy and buttery at the same time. Pungent
+                                    aromatics up front paired with a malt-balanced backbone and a smooth, bitter
+                                    finish.</p>
+                            </div>
+                        </td>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6708.65118937135!2d-96.77638485!3d32.783625050000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s75226+bars!5e0!3m2!1sen!2sus!4v1548660559611"
-                    id="map-img" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-        </div>
+    </div>
 
+    <div class="map-bg-div">
+        <div class="maps-div">
+            <div class="container">
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <p class="maps-text">Find Local Breweries & Pubs</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-12 align">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6708.65118937135!2d-96.77638485!3d32.783625050000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s75226+bars!5e0!3m2!1sen!2sus!4v1548660559611"
+                            id="map-img" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social">
+        <div class="social-overlay">
+            <div class="container">
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <p class="social-text"># Social</p>
+                        <div id="pixlee_container">
+                            <a href="https://www.instagram.com/drinkrapp/" target="_blank">
+                                <img src="assets/images/instapics.png" alt="instagram-pictures">
+                            </a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
         <div class="container">
-            <div class="row text-center my-0">
-                <div class="col-12" id="social-media">
-                    <ul>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="far fa-envelope"></i></a></li>
-                    </ul>
+            <div class="row my-0 mx-auto">
+                <div class="soc-icon-div d-flex">
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="col-md-3 col-xs-6 social-icons text-center">
+                        <a href="https://www.instagram.com/drinkrapp/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="mailto:drinkrsmu@yahoo.com" target="_blank"><i class="far fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="row text-center my-0">
+            <div class="row text-center mx-0">
                 <div class="col-12">
-                    <p id="copyright">© drinkr, inc. 2019</p>
-                    <p id="design">site design by <a href="https://github.com/shawnholcomb/project-one">GROUP 2</a></p>
+                    <p id="copyright">© drinkr, inc. 2019 | site design by <a href="https://github.com/shawnholcomb/project-one"
+                            id="design">GROUP 2</a></span></p>
                 </div>
             </div>
         </div>
@@ -204,6 +269,7 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
@@ -211,3 +277,5 @@
     <script src="assets/js/script.js"></script>
 
 </body>
+
+</html>

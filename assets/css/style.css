@@ -1,41 +1,110 @@
+/* Reset */
+
 * {
     box-sizing: border-box;
     max-width: 100%;
 }
 
 body {
-  background: url("../images/body-bg.jpg");
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    background-color: #f5f5f5;
 }
 
-.text-muted {
-  color: white;
+/* Age Modal */
+
+.modal {
+    position: fixed;
+    bottom: 0;
+    background: rgba(38, 38, 38, 0.65);
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
-.last-seconds {
-  color: red;
+/* Index Styling */
+
+#bg-video {
+    position: fixed;
+    left: 0;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    /* overflow: hidden; */
 }
 
-.option {
-  margin: 15px;
+.bg-still {
+    background: url(../images/beer-pour-still.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-position: center;
+    background-position: center;
+}
+  
+.video-overlay {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
+
+.title-header {
+    margin-top: 16%;
+    font-family: 'Cabin', sans-serif;
+    font-size: 48px;
+}
+
+.title-secondary {
+    margin-top: 3%;
+    font-size: 22px;
+}
+
+.title-span {
+    font-family: 'Cabin', sans-serif;
+    font-size: 30px;
+  }
+
+.start-quiz {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+#quiz-btn {
+    background: none;
+    color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    padding: 5px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+#quiz-btn:hover {
+    background: #169aef;
+}
+
+button:focus {
+    outline: none;
 }
 
 header {
     width: 100%;
 }
 
-.row {
-    margin-bottom: 15px;
-}
-
 a {
-    color: #fff;
+    color: #f5f5f5;
 }
 
 a:hover,
 #retake-quiz:hover {
-    color: #efd916;
+    color: #e0245e;
     text-decoration: none;
 }
 
@@ -55,18 +124,98 @@ a:hover,
     padding-bottom: 5px;
 }
 
-#retake-quiz {
-    color: #169aef;
+/* Questionaire Styling */
+
+.text-muted {
+    color: #f5f5f5;
 }
 
-#selected-style-name {
-    font-weight: bold;
-    text-decoration: underline;
+.last-seconds {
+    color: red;
+}
+
+.option {
+    margin: 15px;
+}
+
+/* Results Page Styling */
+
+p {
+    margin-bottom: 2px;
+}
+
+.bg-parallax {
+    background: url(../images/bg-taps.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: calc(100vh - 60px);
+    position: relative;
+}
+
+.parallax-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.30);
+    color: #f5f5f5;
+    width: 100%;
+    height: 100%;
+}
+
+.abs-container {
+    position: absolute;
+    top: 40vh;
+}
+
+.based-on,
+.based-on-arrow {
+    color: #f5f5f5;
+    width: 100%;
+    font-family: 'Cabin', sans-serif;
+    font-size: 50px;
+    text-shadow: 2px 2px 1px #262626;
+}
+
+.selected-style-text {
+    margin-bottom: 20px;
+    color: #262626;
+    font-family: 'Cabin', sans-serif;
+    font-size: 32px;
+}
+
+.selected-style-div {
+    padding: 30px 0;
+}
+
+#selected-style-description {
+    margin-bottom: 20px;
+}
+
+#selected-style-image {
+    margin-bottom: 20px;
+}
+
+.retake-quiz-btn {
+    background: #169aef;
+    color: #f5f5f5;
+    padding: 5px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+
+.retake-quiz-btn:hover {
+    background: #e0245e;
 }
 
 #selected-style-image,
 #map-img {
     width: 100%;
+    border: 1px solid #262626
+}
+
+.recommended-beers-div {
+    padding-bottom: 25px;
 }
 
 table {
@@ -75,173 +224,155 @@ table {
 }
 
 td {
-    background:#444;
-    border: 2px solid #000;
-    color: #fff;
+    background: url(../images/body-bg.jpg);
+    border-top: 1px solid #262626;
+    color: #262626;
     display: flex;
     padding: 10px;
     margin-bottom: 3px;
-    min-height: 150px;
+    min-height: 120px;
 }
 
 td a {
     color: #169aef;
 }
 
-.beer-logo {
+.recommended-beer-row {
     position: relative;
     width: 120px;
     height: auto;
-    overflow: hidden;
 }
 
-.item {
-    position: absolute;
-    top: 0;
-    left: 0;
+.recommended-beer-company {
+    font-size: 16px;
 }
 
-.item img {
-    -webkit-transition: 0.6s ease;
-    transition: 0.6s ease;
+.recommended-beer-name {
+    font-size: 16px;
+    font-weight: bolder;
 }
 
-.beer-logo:hover .item img {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-}
-
-.recommended-beer-label {
-    width: 120px;
-}
-
-footer {
-    background-color: #169aef;
-    color: #fff;
-    font-size: 11px;
-    display: flex;
-    padding-top: 10px;
-    /* padding-bottom: 20px; */
-}
-
-#social-media {
-    justify-content: center;
-}
-
-#copyright {
-    margin-bottom: 0;
+.recommended-beer-description {
     font-size: 14px;
 }
 
-#design {
-    margin-bottom: 30px;
+.map-bg-div {
+    width: 100%;
+    background: #262626;
 }
 
-li {
-    display: inline;
-    padding: 0 10px;
-    margin: 0 15px;   
-    font-size: 40px; 
+.maps-div {
+    background: url(../images/map-bg.jpg) no-repeat;
+    background-position: center center;
+    background-size: auto;
+    padding: 45px 0;
 }
 
-/* Video styling */
-#bg-video {
+.maps-text {
+    color: #f5f5f5;
+    font-family: 'Cabin', sans-serif;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.social {
+    background: url(../images/bg-beerhops.jpg) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    height: 500px;
+    position: relative;
+    padding: 45px 0;
+}
+
+.social-overlay {
     position: absolute;
-    top: 40%; 
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-40%);
-    transform: translateX(-50%) translateY(-40%);
-    min-width: 100%; 
-    min-height: 100%; 
-    width: auto; 
-    height: auto;
-}
-
-.bg-still {
-    overflow: hidden;
-}
-  
-.video-overlay {
-    position: fixed;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.65);
-    color: #f1f1f1;
+    background: rgba(0, 0, 0, 0.30);
+    color: #f5f5f5;
     width: 100%;
     height: 100%;
 }
 
-.title-header {
-    margin-top: 16%;
+.social-text {
+    color: #f5f5f5;
     font-family: 'Cabin', sans-serif;
     font-size: 50px;
+    text-shadow: 2px 2px 1px #262626;
+    margin-top: 45px;
+    margin-bottom: 20px;
 }
 
-.title-secondary {
-    margin-top: 2%;
-    font-size: 22px;
+#insta {
+    width: 100%;
 }
 
-.title-span {
-    font-family: 'Cabin', sans-serif;
-    font-size: 30px;
-  }
-
-.start-quiz {
-    margin-top: 3%;
+footer {
+    background-color: #169aef;
+    color: #f5f5f5;
+    font-size: 11px;
     display: flex;
-    justify-content: center;
+    padding-top: 20px;
+}
+.soc-icon-div {
+    width: 50%;
+    margin: 0 auto 10px auto;
 }
 
-#quiz-btn {
-    background: none;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 5px 20px;
-    border-radius: 25px;
-    transition: 0.3s;
+.social-icons a {
+    font-size: 40px;
 }
 
-#quiz-btn:hover {
-    background: #169aef;
+#copyright {
+    margin-bottom: 30px;
+    font-size: 12px;
 }
 
-button:focus {
-    outline: none;
+#design {
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* Media Queries */
-@media only screen and (max-width: 991px) {
-    .beer-logo {
-        width: 100px;
-    }
 
-    .recommended-beer-label {
-        width: 100px;
+@media only screen and (max-width: 1630px) {
+    #bg-video {
+        display: none;
     }
-
-    h5 {
-        font-size: 14px;
-    }
-
-    h6 {
-        font-size: 14px;
-        line-height: 130%;
-    }
-
-    td {
-        min-height: 150px;
-    }    
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 991px) {
+    .soc-icon-div {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .soc-icon-div {
+        width: 100%;
+    }
     .title-header {
-        margin-top: 45px;
-        font-size: 46px;
+        font-size: 44px;
     }
     
     .title-secondary {
-        margin-top: 30px;
-        font-size: 22px;
+        margin-top: 5%;
+        font-size: 20px;
+    }
+    
+    .start-quiz {
+        margin-top: 6%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .title-header {
+        font-size: 36px;
+    }
+    
+    .title-secondary {
+        margin-top: 7%;
+        font-size: 18px;
     }
     
     .title-span {
@@ -249,11 +380,57 @@ button:focus {
       }
     
     .start-quiz {
-        margin-top: 30px;
-        display: flex;
-        justify-content: center;
+        margin-top: 9%;
+    }
+
+    .based-on,
+    .based-on-arrow {
+        font-size: 40px;
+    }
+    .retake-quiz-btn {
+        padding: 2px 10px;
+    }
+    .maps-text {
+        font-size: 40px;
+    }
+    .social-text {
+        font-size: 40px;
+        margin-top: 45px;
+        margin-bottom: 20px;
     }
 }
 
-@media only screen and (max-width: 575px) {}
+@media only screen and (max-width: 560px) {
+    .title-header {
+        margin-top: 25%;
+        font-size: 24px;
+    }
 
+    .title-secondary {
+        margin-top: 12%;
+        font-size: 16px;
+    }
+
+    .title-span {
+        font-size: 24px;
+    }
+
+    .start-quiz {
+        margin-top: 16%;
+    }
+}
+
+
+.options {
+    background: #169aef;
+    color: #f5f5f5;
+    padding: 5px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+
+.options:hover {
+    background-color: #e0245e;
+    text-decoration: none;
+}
