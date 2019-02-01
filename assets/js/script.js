@@ -1,5 +1,7 @@
 var selectionTypeArr = ["ipa", "stout", "pilsner", "lager"];
 
+var selectedTypeIndex;
+
 var selections =[ // descriptions from beeradvocate.com
   {name: "Imperial IPA",
   description: "We have west coast American brewers to thank for this somewhat reactionary style. Take an India Pale Ale and feed it steroids, and you'll end up with a Double or Imperial IPA. Although generally recognizable alongside its sister styles in the IPA family, you should expect something more robust, malty, and alcoholic with a characteristically intense hop profile in both taste and aroma. In short, these are boldly flavored, medium-bodied beers that range in color from deep gold to medium amber. The 'imperial' usage comes from Russian Imperial Stout, a style of strong Stout originally brewed in England during the late 1700s for the Russian imperial court. Today Double IPA is often the preferred name in the United States.",
@@ -27,3 +29,48 @@ $(".options").on("click", function () {
 
 // API Time!
 
+function grabBeerInfo() {
+
+  $('#recommended-beer-table').empty();
+
+  var beerType = this.id;
+
+  var url = "https://api.untappd.com/v4/search/beer?access_token=8FE59E16FA14827F03E47654E9309EC100D785A8&q=" + beerType + "&limit=5"
+
+  $.ajax(url)
+    .then(function (response) {
+
+      var results = response.response.beers.items;
+
+      console.log(results);
+
+      results.forEach(function (results) {
+
+      var beerName = results.beer.beer_name;
+      var brewName = results.brewery.brewery_name;
+      var brewWeb = results.brewery.contact.url;
+      var beerLabel = results.beer.beer_label;
+      var beerDescrip = results.beer.beer_description;
+
+      var createTD = $('<td>');
+      var labelDiv = $('<div>').addClass('recommended-beer-row col-md-2 p-0');
+      var labelImage = $('<img>').addClass("recommended-beer-label").attr('src', beerLabel);
+
+      labelDiv.append(labelImage);
+      createTD.append(labelDiv);
+      
+      var detailsDiv = $('<div>').addClass("col-md-10");
+      var nameP = $('<p>').addClass('recommended-beer-name').text(beerName);
+      var brewA = $('<a>').addClass('recommended-beer-url').text(brewName).attr("href", brewWeb).attr('target', '_blank');
+      var descripP = $('<p>').addClass('recommended-beer-description').text(beerDescrip);
+
+      detailsDiv.append(nameP, brewA, descripP);
+      createTD.append(detailsDiv);
+
+      $('#recommended-beer-table').append(createTD);
+      
+        });
+    });
+};
+
+$(document).on('click', '.options', grabBeerInfo);
