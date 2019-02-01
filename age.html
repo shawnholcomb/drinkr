@@ -1,7 +1,14 @@
-<head>
+<!DOCTYPE html>
+<html>
 
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+<head>
+    <link rel= "stylesheet" type="text/css" href="assets/css/agestyle.css">
+     </head>
+  <body>
     <div class="ageContainer">
-        <h1>**** PLEASE ENTER YOUR BIRTHDAY ****</h1>
+        <h1>Are you even old enough to drink beer?</h1>
 
         <form method="post" name="age_form">
             <select name="day">
@@ -90,10 +97,90 @@
                 <option>1980</option>
                 <option>1979</option>
                 <option>1978</option>
-    </div>
+
+     
 
     </select>
+    
     <script>
+
+
+// This is called with the results from from FB.getLoginStatus().
+function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '348556779073518',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : '{api-version}' // The Graph API version to use for the call
+    });
+
+    // Now that we've initialized the JavaScript SDK, we call 
+    // FB.getLoginStatus().  This function gets the state of the
+    // person visiting this page and can return one of three states to
+    // the callback you provide.  They can be:
+    //
+    // 1. Logged into your app ('connected')
+    // 2. Logged into Facebook, but not your app ('not_authorized')
+    // 3. Not logged into Facebook and can't tell if they are logged into
+    //    your app or not.
+    //
+    // These three cases are handled in the callback function.
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+
+
         function checkAge() {
 
             var min_age = 21;
@@ -111,11 +198,26 @@
                 return false;
             }
             else {
-                window.location.href = ("http://www.facebook.com")
+                
+                window.location.href = ("index.html")
                 return false;
             }
         }
     </script>
 
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+    
+    <div id="status">
+    </div>
+    
+
     <input type="submit" name="senddate" value="Go" onClick="return checkAge()">
-</head>
+
+    <h1>or</h1>
+    <img class=images src="data:image/png;base64,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">
+    </div>
+
+  </body>
+</html>
+
