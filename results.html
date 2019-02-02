@@ -54,7 +54,7 @@
         <div class="container">
             <div class="row mx-0">
                 <div class="col-lg-8 col-md-12">
-                    
+
                     <row class="d-flex my-1">
                         <p>Click a button</p>
                         <div class="col-3">
@@ -70,7 +70,7 @@
                             <button class="options" id="lager" data-value="3">Lager</button>
                         </div>
                     </row>
-                    
+
                     <div class="row">
                         <div class="col-sm-12">
                             <h3 class="selected-style-text" id="selected-style-name"></h3>
@@ -107,105 +107,13 @@
             <div class="row mx-0">
                 <div class="col-12">
                     <table id="recommended-beer-table">
-                        <td>
-                            <div class="recommended-beer-row col-md-2 p-0">
-                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-8056_7fcfd_sm.jpeg" id="recommended-beer-label">
-                            </div>
-                            <div class="col-md-10">
-                                <p class="recommended-beer-name">90 Minute Imperial IPA</p>
-                                <a href="https://www.dogfish.com/" class="recommended-beer-url" target="_blank">
-                                    <p class="recommended-beer-company">Dogfish Head Craft Brewery</p>
-                                </a>
-                                <p class="recommended-beer-description">Esquire Magazine calls our 90 Minute IPA
-                                    "perhaps
-                                    the best IPA in America." An
-                                    imperial
-                                    IPA best savored from a snifter, 90 Minute has a great malt backbone that stands up
-                                    to
-                                    the extreme hopping rate.</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="recommended-beer-row col-md-2 p-0">
-                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-_117064_sm.jpeg" class="recommended-beer-label">
-                            </div>
-                            <div class="col-md-10">
-                                <p class="recommended-beer-name">Resin</p>
-                                <a href="https://sixpoint.com/" target="_blank" class="recommended-beer-url">
-                                    <p class="recommended-beer-company">Sixpoint Brewery</p>
-                                </a>
-                                <p class="recommended-beer-description">"Resin" is named after the sticky ooze that
-                                    secretes from the lupulin glands of the
-                                    hop
-                                    cone.</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="recommended-beer-row col-md-2 p-0">
-                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-646818_228c6_sm.jpeg"
-                                    class="recommended-beer-label">
-                            </div>
-                            <div class="col-md-10">
-                                <p class="recommended-beer-name">West Coast IPA</p>
-                                <a href="https://www.greenflashbrew.com/" target="_blank" class="recommended-beer-url">
-                                    <p class="recommended-beer-company">Green Flash Brewing Company</p>
-                                </a>
-                                <p class="recommended-beer-description">As craft beer pioneers, we embarked on an
-                                    expedition to brew the benchmark West
-                                    Coast
-                                    IPA. We ventured into the unknown and struck gold, discovering a tantalizing
-                                    menagerie
-                                    of hops. Simcoe for tropical and grapefruit zest, Columbus for hop pungency,
-                                    Centennial
-                                    for pine notes, Citra for citrus zest and Cascade for floral aroma are layered
-                                    throughout the brewing process. West Coast IPA® exemplifies the Green Flash spirit
-                                    of
-                                    adventure and discovery.</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="recommended-beer-row col-md-2 p-0">
-                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-933141_d4f4f_sm.jpeg"
-                                    class="recommended-beer-label">
-                            </div>
-                            <div class="col-md-10">
-                                <p class="recommended-beer-name">The Calling</p>
-                                <a href="https://www.boulevard.com/" target="_blank" class="recommended-beer-url">
-                                    <p class="recommended-beer-company">Boulevard Brewing Co.</p>
-                                </a>
-                                <p class="recommended-beer-description">Our most heavily hopped beer ever bursts forth
-                                    with unmistakable tropical fruit and
-                                    pine
-                                    hop aromas and flavor supported with a slightly sweet malt character, tapering to a
-                                    crisp, dry finish. Heed your call and enjoy.</p>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="recommended-beer-row col-md-2 p-0">
-                                <img src="https://untappd.akamaized.net/site/beer_logos/beer-FoundersDoubleTrouble.jpg"
-                                    class="recommended-beer-label">
-                            </div>
-                            <div class="col-md-10">
-                                <p class="recommended-beer-name">Double Trouble</p>
-                                <a href="https://foundersbrewing.com/" target="_blank" class="recommended-beer-url">
-                                    <p class="recommended-beer-company">Founders Brewing Co.</p>
-                                </a>
-                                <p class="recommended-beer-description">Our Double or Imperial IPA that is brewed to
-                                    turn
-                                    your world upside down. This beer
-                                    is
-                                    brewed with Simcoe hops which are citrusy and buttery at the same time. Pungent
-                                    aromatics up front paired with a malt-balanced backbone and a smooth, bitter
-                                    finish.</p>
-                            </div>
-                        </td>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="map-bg-div">
+    <div class="maps-fill-div">
         <div class="maps-div">
             <div class="container">
                 <div class="row mx-0">
@@ -213,10 +121,12 @@
                         <p class="maps-text">Find Local Breweries & Pubs</p>
                     </div>
                 </div>
+                <div>
+                    <input name="zip" type="number" id="userZip"><button id="submit">submit</button>
+                </div>
                 <div class="row mx-0">
                     <div class="col-12 align">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6708.65118937135!2d-96.77638485!3d32.783625050000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s75226+bars!5e0!3m2!1sen!2sus!4v1548660559611"
-                            id="map-img" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -229,12 +139,30 @@
                 <div class="row mx-0">
                     <div class="col-12">
                         <p class="social-text"># Social</p>
-                        <div id="pixlee_container">
-                            <a href="https://www.instagram.com/drinkrapp/" target="_blank">
-                                <img src="assets/images/instapics.png" alt="instagram-pictures">
-                            </a>
-                        </div> 
                     </div>
+                </div>
+                <div class="row mx-0 d-flex">
+                    <div class="col-lg-3 col-sm-6 mb-3">
+                        <a href="https://www.instagram.com/p/BtT2sESFkKm/" target="_blank">
+                            <img src="assets/images/soc1.jpg" alt="social-media-picture">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-3">
+                        <a href="https://www.instagram.com/p/BtR132mF6Cr/" target="_blank">
+                            <img src="assets/images/soc2.jpg" alt="social-media-picture">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-3">
+                        <a href="https://www.instagram.com/p/BtRNCz9Fged/" target="_blank">
+                            <img src="assets/images/soc3.jpg" alt="social-media-picture">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-3">
+                        <a href="https://www.instagram.com/p/BtP4g9FlQ2E/" target="_blank">
+                            <img src="assets/images/soc4.jpg" alt="social-media-picture">
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -245,7 +173,7 @@
             <div class="row my-0 mx-auto">
                 <div class="soc-icon-div d-flex">
                     <div class="col-md-3 col-sm-6 social-icons text-center">
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://twitter.com/drinkr3" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                     <div class="col-md-3 col-sm-6 social-icons text-center">
                         <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -267,14 +195,73 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <!-- For Quiz     -->
+    <div id="quiz-modal-bg">
+        <div id="quiz-modal">
+        </div>
+
+
+        <div class="quiz-container">
+            <div class="container">
+                <div class="header text-center clearfix">
+                    <h1 class="text-muted">Beer Questionaire</h1>
+                </div>
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <div id="game">
+                            <h2></h2>
+                            <p id="question" class="lead"></p>
+                        </div>
+                        <div id="results">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="choices" class="text-center">
+                            <button id="start" class="btn btn-primary btn-lg">Start</button>
+                            <div id="options">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="question-stuff" class="text-center">
+                            <button id="nextQ" class="btn btn-secondary btn-lg">Next Question</button>
+                            <div id="next">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+        <script src="assets/js/script.js"></script>
+
+        <script src="assets/js/questionaire.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpKz-kEJNxnFWAfhXzmdgFXuZRpAMOP_c&libraries=places&callback=initMap"
+            async defer></script>
 
 </body>
 

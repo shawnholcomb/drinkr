@@ -12,7 +12,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Walter+Turncoat|Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
@@ -24,7 +24,7 @@
     <div class="bg-still"></div>
 
     <video autoplay muted loop id="bg-video">
-        <source src="assets/images/beer-pour.mp4" type="video/mp4">
+        <source src="assets/images/vid-beer.mp4" type="video/mp4">
     </video>
 
     <div class="video-overlay">
@@ -58,12 +58,124 @@
             </div>
         </div>
     </div>
-    
-    <div class="modal">
-        <div class="modal-contents">
 
+    <div id="modal">
+        <div id="age-modal">
+        </div>
+
+        <div class="ageContainer">
+            <div class="age-container-text">
+
+                <p id="size">Are you old enough to drink?</p>
+                <p id="birthday">Enter your birthdate below</p>
+
+                <form method="post" name="age_form" id="date-form">
+                    <select name="day">
+                        <option selected>day</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                        <option>23</option>
+                        <option>24</option>
+                        <option>25</option>
+                        <option>27</option>
+                        <option>29</option>
+                        <option>30</option>
+                        <option>31</option>
+                    </select>
+
+                    <select name="month">
+                        <option selected>month</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+
+                    <select name="year">
+                        <option selected>year</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                        <option>2006</option>
+                        <option>2005</option>
+                        <option>2004</option>
+                        <option>2003</option>
+                        <option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
+                        <option>1999</option>
+                        <option>1998</option>
+                        <option>1997</option>
+                        <option>1996</option>
+                        <option>1995</option>
+                        <option>1994</option>
+                        <option>1993</option>
+                        <option>1992</option>
+                        <option>1991</option>
+                        <option>1990</option>
+                        <option>1989</option>
+                        <option>1988</option>
+                        <option>1987</option>
+                        <option>1986</option>
+                        <option>1985</option>
+                        <option>1984</option>
+                        <option>1983</option>
+                        <option>1982</option>
+                        <option>1981</option>
+                        <option>1980</option>
+                        <option>1979</option>
+                        <option>1978</option>
+                    </select>
+
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button>
+
+                    <div id="status">
+                    </div>
+
+
+                    <input type="submit" name="senddate" value="Go" id="age-submit">
+
+                    <h4>or</h4>
+                    <img class=images src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUMAAACcCAMAAADS8jl7AAAAjVBMVEU5V5r///8zU5gYQ5E3VZkqTZUkSZMuT5ZmfbDS1+RCYKDW3OooS5SVo8aLmsCvt9DAyN3j5+/09vqtuNKFlb1jeKwXQpB2hrPt8PbByd32+Pzn6/Pc4OtedKpJZKI9XJ5XbqegrczIz+B9jrlQaaR2ibYAN4wKPY61v9dZcKibp8imstBsgLCRn8QAOo1UtiyxAAAH80lEQVR4nO2aa3uiOhRGIZDES+qgooJ4A3Wqouf//7yzdwCLrVW002fmzHnXhw5gTHaWuTOOAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOABhGqG9H93pH8sct1uRi5+d6h/KvrkNiWTvzvYPxSvsULXnaM3X+URhy305qvA4deBw69z2+EgIgYDOLzJLYfZdsOzyGKRweEtPnc4OCphJ2Lf/IDDW3zucKGrNBIOb/Kpw/CsEA7v8JnDyCsT+D768h0+c7gz9mMhO4uFs4PDW3zmcG19idGMVzfuLYfUUBuV1Dzd2+W1TCoaZda01Mb5XeMzhyubp0rqz646bFqfR9K9XV7L5BGJDRM+8KNc4TOHHZvl2L3r0ARJctBXPrhErJNk2OTgRw5nipJzjmrw/pRDRf2KSDXIzOlE/W6DhFyJ509Ubjt07jtUXdf9cV+O7rlubBoEJHeJckQv1xzb+xLr0XrXv3+B36F1bgOHXInnR/ubDjmExx2KWr+wl/xHrKNoqMvRzhc3fvPOwieR3Bitw4s+xtEmRTtMVFGWqJX1Fp9fPOcKROqiOOFf3vhVJbh2z/XoX+3QN85qvhG62OHIzXxhODAeb4RTDDxyOd+Lc1aiGAe0KL7g2wfej9mrZoeaBJi3enG0e694N8GpqayVX7ykEGYzXznlaoKvOQbrcCz286Ust1zL/Xwj9ftQS4fsd/nrHBalLB91KJbDZOoO+i8cs9h0B+4g30Y0EhbjoT4k0fYQudP+uhxCxeSFr3QacjMQw43YnvQy70Z5qj13vm9HUbY/D7dePQpf51xWki+pLHOcDdxpMuSGJItrytg63PSnbpSyKtEJIvrGLJTvQi0cSoo0WT3eEj86jI+T0aQM1J8wx6SxQ11N5IGiCkzt5YxHwmI85B1PeYAxKjITR9dWyJ3S+Ca2ruRu3MmSQRZIz80H6WSdvR2gc7RzZRgqOS7LmhlHr8vrrnFk9XojVnY8LKLYcUDVCdRQXYZqHcoV3fSeeOHx0WFohDh3Nb4U41lThypw3Wka8po8FCrjmx5/ObAOA+vQbfdS+6j8CqV0RJi4NAyauK3sUDimviw5tj0FM+63q8mIo80CJjP+nG7yMJ1yYILzDXMuVy/YWDi013YwykP+3faCQ40OvdhW5TJU+mTkkOFTo9n+rsPeh4VKtcK579DnVEp7JCnxhL2ROrp0GHnaowpWSw6TZYr+DGcHHgBDYR1Wcwq3F0cfzlNrLVpPH6aD4NX8JCU9deIC9Zi8ZGPKfPhqxiE1UMUOT0pzKwjUnm4WUnuUqq3qoSquxJzSHJ5R2MhhtcK561CQqBmvOQyldo7Uj+jGDC8d0i6SbyqHYu0qnj1+tJUYudq5cDjhEnVvWndoz4UjetRZOIvRltt0zyORtPr0N5NJy6OAQh6BWDQ7VL4tcPZKgWQ8FXFDfa2HuuRKkMLu6zMKmzi0naaRQ1ZkF4EedYt5Kaqw9+aQEtcd+ppm34XrtVxldm116bB1xeGWdvAEiZm3y11ob9wt4vaF8FX0Vpdlpzg9ES3695+gjJRzEcNaqNY7M39qjXhlPJS18ZCCErIarx90aDtT8Qb7hkPKIPDSmVLufjx40fcdtkSxM/O5a0bdNKs5FFoLdjgr6LPDwdlhXEaqrjuk7/WbLNwbOIz3o9Go/EHEiK+zuw6VnXuEJm3JmM1zlCP6QysKL7vtUL8MfnZzqbp5xxVOE4fFtaFmtXPUOK76siFVw/zEPje0hhz//PmPXeDSClseqMAxdfs2C2X5r/VQbSViThve37U2cVj2Avtpw/VhwNqJJQe09qRHs11f8c8dLwUFe9MhLUIdWr3IvJuyuMYO7VwqbbPrqQPvR8wr/Vw7zw570lvThsbOKbuxkbSOSc2GbkZK8nohU5ehcl58Of2VDh/ap5wTKF5RZCk/2gqZcgexq7BbDh2VZDSt0Kjb5+V25XAs7rVDVjE/tl3uxpr+9nPuMAvRsdfUSqlp2gpkKQfh+HaxFee82Fr5ph5qscYW9iu/w+GsnkC2y0telXBvo6jzymFcdzg7O5RDO11Ss+X8rUN9cLehqBye3GsOeYxjqMRc6m1Z7olyXxerajeTdp/Srz7wnX6Z6sXQRrEWKleiJahUGgZ+xT7lQYc6DSrile/rl1kSJe0t/5xCtYZBurAtUByD4KRFGAS8pKab9Nxr/FXMJ746tWdjIuQjG6cdZcZkduMljrsqrYm5kKrk7SyK2vN9EOykI1sZl9viLORm14+iGU8yyzgYLjO6WduAnJQ+SDKbqh4qVcIGvwvi3uNT85cdOtqc4TMaLTuLpbIpW6ORp8y4mA6FMTxxGsMfFTdnifaZo4vZvTiEkD7dlacN4i1tUUiJ0J2OEb4x1r1ZLpamnAqNv+hIe+5BBfH7DFmGLunaUeVGthaqLoKXxjyxuvm6w4/4ZYjcaTab8IFvfsjkoUS1u3eHWBefPFzKPb7DYYnk7av9jybZU1uo/wzf6JCmjoRH92T4l/+/xe906Gh/dWzNnSeWC/8pvtWh3Sr+/S+lv9fh/wM4/Dpw+HXg8OuoQXOHKzi8iphcd2jPvi7fje7+9jXK0+jN+uUjYbnx7L09Ouq/fKn8BXyhP3J+N/rxEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw5l/ShYoCiVK98AAAAABJRU5ErkJggg==">
+            </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="assets/js/ageVer.js"></script>
 
 </body>
 
