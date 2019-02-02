@@ -157,4 +157,3 @@ var questionaire = {
     questionaire.nextQuestion();
   }
 
-}
