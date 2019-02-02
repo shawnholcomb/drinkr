@@ -55,7 +55,7 @@
             <div class="row mx-0">
                 <div class="col-lg-8 col-md-12">
 
-                    <row class="d-flex my-1">
+                    <!-- <row class="d-flex my-1">
                         <p>Click a button</p>
                         <div class="col-3">
                             <button class="options" id="ipa" data-id="0">IPA</button>
@@ -69,7 +69,7 @@
                         <div class="col-3">
                             <button class="options" id="lager" data-value="3">Lager</button>
                         </div>
-                    </row>
+                    </row> -->
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -196,47 +196,46 @@
     </footer>
 
     <!-- For Quiz     -->
-    <!-- <div id="quiz-modal-bg">
+    <div id="quiz-modal-bg">
         <div id="quiz-modal">
         </div>
 
         <div class="quiz-container">
 
-            <div class="header text-center clearfix">
-                <h1 class="text-muted">Questionaire</h1>
-            </div>
+            <div class="container">
 
-            <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron jumbotron-fluid">
 
-                <div class="container">
-                    <div id="game">
-                        <h2></h2>
-                        <p id="question" class="lead"></p>
-                    </div>
-                    <div id="results">
-                    </div>
-                </div>
-
-                <div id="zip" class="input-group mb-3">
-                    <input type="text" onkeypress="isInputNumber(event)" class="form-control" id="inputZip" placeholder="Please Enter Your Zip Code"
-                        aria-label="Recipient's username" aria-describedby="button-addon2" minlength="5" maxlength="5">
-                    <div class="input-group-append">
-                        <button class="btn-primary" type="button" id="button-addon2">Submit</button>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div id="choices" class="text-center">
-                        <button id="start" class="btn btn-primary btn-lg">Start</button>
-                        <div id="options">
+                    <div class="container">
+                        <div id="game">
+                            <h2></h2>
+                            <p id="question" class="lead"></p>
+                        </div>
+                        <div id="results">
                         </div>
                     </div>
-                </div>
 
+
+                    <div id="zip" class="input-group mb-3">
+                        <input type="text" onkeypress="isInputNumber(event)" class="form-control" id="inputZip"
+                            placeholder="Please Enter Your Zip Code" minlength="5" maxlength="5">
+                        <div class="input-group-append">
+                            <button class="btn-primary" type="button" id="zip-submit">Submit</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="choices" class="text-center">
+                            <div id="options">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
-    </div> -->
+    </div>
 
 
 
@@ -251,7 +250,7 @@
 
     <script src="assets/js/script.js"></script>
 
-    <script src="assets/js/questionaire.js"></script>
+    <!-- <script src="assets/js/questionaire.js"></script> -->
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpKz-kEJNxnFWAfhXzmdgFXuZRpAMOP_c&libraries=places&callback=initMap"
         async defer></script>
