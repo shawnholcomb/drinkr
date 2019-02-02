@@ -223,7 +223,13 @@ a:hover,
     width: 100%;
 }
 
+#zip {
+    display: none;
+}
 
+#inputZip {
+    width: 100%;
+}
 
 /* Results Page Styling */
 
