@@ -165,3 +165,5 @@ function codeAddress() {
 
 $('#submit').on('click', codeAddress);
 $('#submit').on('click', initMap);
+$('#submit').on('click', callback);
+$('#submit').on('click', createMarker);
