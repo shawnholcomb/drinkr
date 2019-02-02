@@ -186,9 +186,9 @@ a:hover,
 
 /* Questionaire Styling */
 
-#quiz-modal-bg {
-    /* display: none; */
-}
+/* #quiz-modal-bg {
+    display: none;
+} */
 
 #quiz-modal {
     position: fixed;

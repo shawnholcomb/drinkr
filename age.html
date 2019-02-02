@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>age restriction</title>
+<title>Facebook Login JavaScript Example</title>
 <meta charset="UTF-8">
 
 <head>
@@ -12,7 +12,9 @@
 
         <div id="fb-root"></div>
         
-        <script>(function(d, s, id) {
+        <script>
+            
+            (function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
           if (d.getElementById(id)) return;
           js = d.createElement(s); js.id = id;
@@ -118,30 +120,25 @@
     </select>
 
     <script>
-
-     function checkAge() {
-
+        function checkAge() {
             var min_age = 21;
-
-
             var year = parseInt(document.forms["age_form"]["year"].value);
             var month = parseInt(document.forms["age_form"]["month"].value) - 1;
             var day = parseInt(document.forms["age_form"]["day"].value);
-
             var theirDate = new Date((year + min_age), month, day);
             var today = new Date;
-
             if ((today.getTime() - theirDate.getTime()) < 0) {
                 window.location.href = ("http://www.nickjr.com/paw-patrol/");
                 return false;
             }
             else {
-
                 window.location.href = ("index.html")
                 return false;
             }
         }
-
+        FB.api('/me', {fields: 'last_name'}, function(response) {
+  console.log(response);
+});
         
     </script>
 
@@ -150,4 +147,5 @@
 <div class="fb-login-button" data-width="200px" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
 </body>
+
 </html>

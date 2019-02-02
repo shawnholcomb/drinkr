@@ -56,6 +56,8 @@ var questionaire = {
     q8: ['Cheese', 'Seafood', 'BBQ', 'Fried Foods'],
     q9: ['Wasted', 'Lit', 'Intoxication', 'Buzzed'],
   },
+  
+  
 
   startGame: function () {
     questionaire.currentSet = 0;
@@ -156,4 +158,4 @@ var questionaire = {
 
     questionaire.nextQuestion();
   }
-
+}
