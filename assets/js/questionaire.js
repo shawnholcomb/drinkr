@@ -1,8 +1,17 @@
+function isInputNumber(evt) {
+  var ch = String.fromCharCode(evt.which);
+  if (!(/[0-9]/.test(ch))) {
+    evt.preventDefault();
+  }
+}
+
 $(document).ready(function () {
 
   $("#start").on('click', questionaire.startGame);
   $(document).on('click', '.option', questionaire.userChoice);
   $('#input').hide()
+  $('#zip').hide();
+
 
 })
 
@@ -54,7 +63,6 @@ var questionaire = {
     questionaire.lager = 0;
     questionaire.stout = 0;
     questionaire.ipa = 0;
-    clearInterval(questionaire.timerId);
 
     $('#game').show();
 
@@ -93,6 +101,9 @@ var questionaire = {
           '<p>Ipa: ' + questionaire.ipa + '</p>');
 
       $('#game').hide();
+      // $('#results').hide();
+      $('#zip').show();
+
     }
 
   },
@@ -111,19 +122,22 @@ var questionaire = {
       questionaire.pilsner++;
       clearInterval(questionaire.timerId);
       resultId = setTimeout(questionaire.userResult, 1000);
-    } else if ($(this).text() === secondOption) {
+    }
+    else if ($(this).text() === secondOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.lager++;
       clearInterval(questionaire.timerId);
       resultId = setTimeout(questionaire.userResult, 1000);
-    } else if ($(this).text() === thirdOption) {
+    }
+    else if ($(this).text() === thirdOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.stout++;
       clearInterval(questionaire.timerId);
       resultId = setTimeout(questionaire.userResult, 1000);
-    } else if ($(this).text() === fourthOption) {
+    }
+    else if ($(this).text() === fourthOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.ipa++;
