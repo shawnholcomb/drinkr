@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///Users/Shawn/Desktop/project-one/results.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
+</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="theme-color" content="#169aef">
+
+    <title>drinkr · Discover your next favorite beer</title>
+
+    <link rel="stylesheet" type="text/css" href="./drinkr · Discover your next favorite beer_files/reset.css">
+    <link rel="stylesheet" href="./drinkr · Discover your next favorite beer_files/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./drinkr · Discover your next favorite beer_files/style.css">
+
+    <link href="./drinkr · Discover your next favorite beer_files/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./drinkr · Discover your next favorite beer_files/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./drinkr · Discover your next favorite beer_files/font-awesome-animation.css">
+
+    <link rel="shortcut icon" href="file:///Users/Shawn/Desktop/project-one/assets/images/favicon.png" type="image/x-icon">
+<script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/places_impl.js"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="./drinkr · Discover your next favorite beer_files/infowindow.js"></script></head>
+
+<body>
+
+    <!-- For Quiz --------------------------------------->
+    <!-- <div id="quiz-modal-bg">
+        <div id="quiz-modal">
+        </div>
+
+        <div class="quiz-container p-3">
+            <div class="container px-0">
+                <div class="row mx-0">
+                    <img class="mx-auto" src="assets/images/drinkr-logo.png" id="quiz-logo">
+                </div>
+                <div class="row mx-0 mt-4 text-center" id="game">
+                    <div class="col-12 text-center">
+                        <p id="question"></p>
+                    </div>
+                </div>
+
+                <div class="row mx-0" id="options">
+                </div>
+
+                <div id="zip" class="input-group mb-3">
+                    <input type="text" onkeypress="isInputNumber(event)" class="form-control" id="inputZip" placeholder="Please Enter Your Zip Code"
+                        minlength="5" maxlength="5">
+                    <div class="d-flex">
+                        <button id="zip-submit" onClick="initMap()">Submit</button>
+                    </div>
+                    <div class="row">
+                        <p id="zip-alert"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div> -->
+
+    <!-- Results Page -------------------------------------->
+    <header>
+        <div class="row navbar mx-0 p-0">
+            <div class="logo">
+                <img src="./drinkr · Discover your next favorite beer_files/drinkr-logo.png" alt="background-image" class="header-logo" onclick="initMap()">
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-parallax">
+        <div class="parallax-overlay">
+            <div class="container">
+                <div class="abs-container">
+                    <div class="row mx-0">
+                        <div class="col-12 text-center">
+                            <p class="based-on">Based on your answers, our recommendation is...</p><p>
+                        </p></div>
+                    </div>
+                    <div class="row mx-0">
+                        <div class="col-12 text-center">
+                            <p class="based-on-arrow"><a href="file:///Users/Shawn/Desktop/project-one/results.html#ssd"><i class="fas fa-angle-double-down faa-falling animated"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="selected-style-div" id="ssd">
+        <div class="container">
+            <div class="row mx-0">
+                <div class="col-lg-8 col-md-12">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h3 class="selected-style-text" id="selected-style-name"></h3>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p id="selected-style-description"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <img src="file:///Users/Shawn/Desktop/project-one/results.html" id="selected-style-image">
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-12 mx-auto">
+                    <p>Feeling adventurous? Want to retake the quiz? <a href="file:///Users/Shawn/Desktop/project-one/index.html"><button class="retake-quiz-btn">Click
+                                Here</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommended-beers-div">
+        <div class="container">
+            <div class="row mx-0">
+                <div class="col-12">
+                    <h3 class="selected-style-text">Here are a few that you may enjoy</h3>
+                </div>
+            </div>
+            <div class="row mx-0">
+                <div class="col-12">
+                    <table id="recommended-beer-table">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="maps-fill-div">
+        <div class="maps-div">
+            <div class="container">
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <p class="maps-text">Find Local Breweries &amp; Pubs</p>
+                    </div>
+                </div>
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0;"><p class="gm-style-pbt"></p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div></div><iframe aria-hidden="true" frameborder="0" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" src="./drinkr · Discover your next favorite beer_files/saved_resource.html"></iframe></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social">
+        <div class="social-overlay">
+            <div class="container">
+                <div class="row mx-0">
+                    <div class="col-12">
+                        <p class="social-text"># Social</p>
+                    </div>
+                </div>
+                <div class="container mx-0 px-0">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6 col-xs-6 mb-3">
+                            <a href="https://www.instagram.com/p/BtT2sESFkKm/" target="_blank">
+                                <img src="./drinkr · Discover your next favorite beer_files/soc1.jpg" alt="social-media-picture">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-xs-6 mb-3 d-flex">
+                            <a href="https://www.instagram.com/p/BtR132mF6Cr/" target="_blank">
+                                <img src="./drinkr · Discover your next favorite beer_files/soc2.jpg" alt="social-media-picture">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-xs-6 mb-3">
+                            <a href="https://www.instagram.com/p/BtRNCz9Fged/" target="_blank">
+                                <img src="./drinkr · Discover your next favorite beer_files/soc3.jpg" alt="social-media-picture">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-xs-6 mb-3">
+                            <a href="https://www.instagram.com/p/BtP4g9FlQ2E/" target="_blank">
+                                <img src="./drinkr · Discover your next favorite beer_files/soc4.jpg" alt="social-media-picture">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row my-0 mx-auto">
+                <div class="soc-icon-div d-flex">
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="https://twitter.com/drinkr3" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="file:///Users/Shawn/Desktop/project-one/results.html#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="col-md-3 col-xs-6 social-icons text-center">
+                        <a href="https://www.instagram.com/drinkrapp/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 social-icons text-center">
+                        <a href="mailto:drinkrsmu@yahoo.com" target="_blank"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center mx-0">
+                <div class="col-12">
+                    <p id="copyright">© drinkr, inc. 2019 | site design by <a href="https://github.com/shawnholcomb/project-one" id="design">GROUP 2</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./drinkr · Discover your next favorite beer_files/jquery.min.js"></script>
+
+    <script src="./drinkr · Discover your next favorite beer_files/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="./drinkr · Discover your next favorite beer_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="./drinkr · Discover your next favorite beer_files/script.js"></script>
+
+    <script src="./drinkr · Discover your next favorite beer_files/js" async="" defer=""></script>
+
+
+
+<div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;"><span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span></div></body></html>
