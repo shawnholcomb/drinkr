@@ -61,8 +61,8 @@ var questionaire = {
     q8: ['Cheese', 'Seafood', 'BBQ', 'Fried Foods'],
     q9: ['Wasted', 'Lit', 'Intoxication', 'Buzzed'],
   },
-  
-  
+
+
 
   startGame: function () {
     questionaire.currentSet = 0;
@@ -72,8 +72,6 @@ var questionaire = {
     questionaire.ipa = 0;
 
     $('#game').show();
-
-    $('#results').html('');
 
     questionaire.nextQuestion();
 
@@ -90,27 +88,15 @@ var questionaire = {
     var questionOptions = Object.values(questionaire.options)[questionaire.currentSet];
 
     $.each(questionOptions, function (index, key) {
-      $('#options').append($('<button class="option btn btn-primary btn-lg">' + key + '</button>'));
+      $('#options').append($('<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 quiz-answers"><button class="option">' + key + '</button></div>'));
     })
-
   },
 
   showResults: function () {
     if (questionaire.currentSet === Object.keys(questionaire.questions).length) {
-
-      $('#results')
-        .html('<h3>Results:</h3>' +
-          '<p>Pilsner: ' + questionaire.pilsner + '</p>' +
-          '<p>Lager: ' + questionaire.lager + '</p>' +
-          '<p>Stout: ' + questionaire.stout + '</p>' +
-          '<p>Ipa: ' + questionaire.ipa + '</p>');
-
       $('#game').hide();
-      // $('#results').hide();
       $('#zip').show();
-
     }
-
   },
 
   userChoice: function () {
@@ -157,7 +143,8 @@ var questionaire = {
     questionaire.currentSet++;
 
     $('.option').remove();
-    $('#results h3').remove();
+    $('#options').empty();
+
 
     questionaire.nextQuestion();
   }
@@ -165,9 +152,9 @@ var questionaire = {
 
 function finalResults() {
   userZip = $('#inputZip').val();
-  
+
   $('#quiz-modal-bg').hide();
-  
+
   var ipa = questionaire.ipa;
   var stout = questionaire.stout;
   var lager = questionaire.lager
@@ -182,7 +169,7 @@ function finalResults() {
   } else {
     userBeer = "stout";
   }
-  
+
 };
 
 $('#zip-submit').on('click', finalResults);
@@ -288,7 +275,7 @@ $(document).on('click', '#zip-submit', grabBeerInfo);
 var geocoder;
 var infowindow;
 var map;
-var service; 
+var service;
 var address;
 // var searchLoc = new google.maps.LatLng(32.78397, -96.7867089);
 
@@ -342,7 +329,7 @@ function createMarker(place) {
 // Geocide converts zipcode to coordinates
 function codeAddress() {
   address = userZip;
-  geocoder.geocode( { 'address': address}, function(results, status) {
+  geocoder.geocode({ 'address': address }, function (results, status) {
     if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
       marker = new google.maps.Marker({
