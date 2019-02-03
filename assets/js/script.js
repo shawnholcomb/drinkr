@@ -7,7 +7,6 @@ function isInputNumber(evt) {
   }
 }
 
-
 $(document).ready(function () {
 
   $('#quiz-modal-bg').show();
@@ -62,8 +61,6 @@ var questionaire = {
     q9: ['Wasted', 'Lit', 'Intoxication', 'Buzzed'],
   },
 
-
-
   startGame: function () {
     questionaire.currentSet = 0;
     questionaire.pilsner = 0;
@@ -74,7 +71,6 @@ var questionaire = {
     $('#game').show();
 
     questionaire.nextQuestion();
-
   },
 
   nextQuestion: function () {
@@ -112,28 +108,28 @@ var questionaire = {
 
       questionaire.pilsner++;
       clearInterval(questionaire.timerId);
-      resultId = setTimeout(questionaire.userResult, 500);
+      resultId = setTimeout(questionaire.userResult, 300);
     }
     else if ($(this).text() === secondOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.lager++;
       clearInterval(questionaire.timerId);
-      resultId = setTimeout(questionaire.userResult, 500);
+      resultId = setTimeout(questionaire.userResult, 300);
     }
     else if ($(this).text() === thirdOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.stout++;
       clearInterval(questionaire.timerId);
-      resultId = setTimeout(questionaire.userResult, 500);
+      resultId = setTimeout(questionaire.userResult, 300);
     }
     else if ($(this).text() === fourthOption) {
       $(this).addClass('btn-light').removeClass('btn-primary');
 
       questionaire.ipa++;
       clearInterval(questionaire.timerId);
-      resultId = setTimeout(questionaire.userResult, 500);
+      resultId = setTimeout(questionaire.userResult, 300);
     }
 
   },
@@ -145,14 +141,11 @@ var questionaire = {
     $('.option').remove();
     $('#options').empty();
 
-
     questionaire.nextQuestion();
   }
 };
 
 function finalResults() {
-  userZip = $('#inputZip').val();
-
   $('#quiz-modal-bg').hide();
 
   var ipa = questionaire.ipa;
@@ -169,11 +162,19 @@ function finalResults() {
   } else {
     userBeer = "stout";
   }
-
 };
 
-$('#zip-submit').on('click', finalResults);
+function checkZip() {
+  userZip = $('#inputZip').val();
 
+  if (userZip.length != 5) {
+    $('#zip-alert').text("Please enter your 5 digit zip code")
+  } else {
+    finalResults();
+  }
+};
+
+$('#zip-submit').on('click', checkZip);
 
 // Results page script
 
@@ -270,27 +271,42 @@ function grabBeerInfo() {
 
 $(document).on('click', '#zip-submit', grabBeerInfo);
 
+// Geocoding API - because Google Maps was giving me a hard time!!
+
+var mapLat;
+var mapLng;
+
+function fetchGeocode() {
+
+  var geoUrl = "https://geocoder.api.here.com/6.2/geocode.json?          app_id=SSTQRmro3ul7kCaPLJBp&app_code=vUKDlObSgUx0jzAyLOo3MA&searchtext=" + userZip + "&country=USA";
+
+  $.ajax(geoUrl)
+    .then(function (response) {
+      mapLat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+      mapLng = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+    });
+
+  initMap();
+  setTimeout(initMap(), 1000);
+};
+
+$('#zip-submit').on('click', fetchGeocode);
+
 // Google Maps  - API key and callback linked at bottom of results.html per Google's documentation
 
-var geocoder;
 var infowindow;
 var map;
 var service;
-var address;
-// var searchLoc = new google.maps.LatLng(32.78397, -96.7867089);
-
-
 
 // Creates map
 function initMap() {
-  geocoder = new google.maps.Geocoder();
-  var searchLoc = new google.maps.LatLng(32.78397, -96.7867089);
+  var searchLoc = new google.maps.LatLng(mapLat, mapLng);
 
   infowindow = new google.maps.InfoWindow();
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: searchLoc,
-    zoom: 17,
+    zoom: 13,
   });
 
   // Search for bars in searchLoc
@@ -320,30 +336,12 @@ function createMarker(place) {
     position: place.geometry.location
   });
 
+  var placeName = place.name.toUpperCase();
+
   google.maps.event.addListener(marker, 'click', function () {
-    infowindow.setContent(place.name);
+
+    infowindow.setContent('<p id="link-thing"><strong>' + placeName + '</strong></p>' + '<p><a href="http://www.google.com/search?q=' + place.name + '">Google Search</a></p>');
+
     infowindow.open(map, this);
   });
 };
-
-// Geocide converts zipcode to coordinates
-function codeAddress() {
-  address = userZip;
-  geocoder.geocode({ 'address': address }, function (results, status) {
-    if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
-      });
-    } else {
-      console.log('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-  console.log(codeAddress);
-}
-
-$('#submit').on('click', codeAddress);
-$('#submit').on('click', initMap);
-$('#submit').on('click', callback);
-$('#submit').on('click', createMarker);
