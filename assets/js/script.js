@@ -41,12 +41,12 @@ var questionaire = {
     q1: ['Yes', 'No', 'Sometimes', 'No, but I Drink It'],
     q2: ['Price', 'Quality of Ingredients', 'Aging Process', 'Alcohol Content'],
     q3: ['It\'s Refreshing', 'Absolutely Nothing', 'I Love the Rich Flavor', 'Hops! Hops! Hops!'],
-    q4: ['At Home', 'A Party (night club)', 'At a Restaurant', 'At a Craft Bar'],
+    q4: ['At Home', 'A Party or Night Club', 'At a Restaurant', 'At a Craft Bar'],
     q5: ['You Mean Water?', 'They\'re Good', 'Now We\'re Talking', 'No Thanks'],
     q6: ['Is There Any Other Kind?', 'Don\'t Make Me Puke', 'They\'re Good', 'No Thanks'],
     q7: ['Bitter', 'Citrus', 'Light', 'Spicy'],
     q8: ['Fried Foods', 'Seafood', 'BBQ', 'Cheese'],
-    q9: ['Intoxication', 'Buzzed', 'Wasted', 'Lit'],
+    q9: ['Intoxicated', 'Buzzed', 'Wasted', 'Lit'],
   },
   answers: {
     //pilsner, lager, stout, ipa
@@ -58,7 +58,7 @@ var questionaire = {
     q6: ['No Thanks', 'Don\'t Make Me Puke', 'Is There Any Other Kind?', 'They\'re Good'],
     q7: ['Citrus', 'Light', 'Bitter', 'Spicy'],
     q8: ['Cheese', 'Seafood', 'BBQ', 'Fried Foods'],
-    q9: ['Wasted', 'Lit', 'Intoxication', 'Buzzed'],
+    q9: ['Wasted', 'Lit', 'Intoxicated', 'Buzzed'],
   },
 
   startGame: function () {
@@ -345,3 +345,11 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 };
+
+$(function () {
+  $(window).scroll(function () {
+      if (($(this).scrollTop() > 10) && ($(this).scrollTop() < 1200)) {
+          initMap();
+      }
+  });
+});
