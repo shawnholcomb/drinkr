@@ -33,8 +33,8 @@ body {
     height: 675px;
     padding: 20px;
     position: absolute;
-    top: 15%;
-    left: 42.5%;
+    top: calc((100vh - 675px) / 2);
+    left: calc((100vw - 450px) / 2);;
 }
 
 .age-container-text {
@@ -77,11 +77,6 @@ body {
 
 #age-submit:hover {
     background: #e0245e;
-}
-
-.images{
-    max-width: 150px;
-    max-height: 100px;
 }
 
 /* Index Styling ------------------------------------------------------ */
@@ -244,7 +239,10 @@ a:hover,
 
 }
 
-
+.zipsub {
+    display: flex;
+    justify-content: center;
+}
 
 #zip-submit:hover,
 .option:hover {
@@ -475,7 +473,6 @@ gm-style div div div div div div div div a:hover {
 
 .social-media-picture {
     transition: transform .2s;
-    border: 2px solid #e0245e;
 }
 
 .social-media-picture:hover {
@@ -531,11 +528,12 @@ footer {
     }
 }
 
+
 @media only screen and (max-width: 991px) {
     .soc-icon-div {
         width: 65%;
     }
-
+    
     .social {
         height: 825px;
     }
@@ -545,11 +543,11 @@ footer {
     .soc-icon-div {
         width: 100%;
     }
-
+    
     .social {
         height: 675px;
-}
-
+    }
+    
     .title-header {
         font-size: 44px;
     }
@@ -562,7 +560,7 @@ footer {
     .start-quiz {
         margin-top: 6%;
     }
-
+    
     #game {
         margin-bottom: 25px;
         height: 120px;
@@ -587,12 +585,12 @@ footer {
     
     .title-span {
         font-size: 30px;
-      }
+    }
     
     .start-quiz {
         margin-top: 9%;
     }
-
+    
     .based-on,
     .based-on-arrow {
         font-size: 40px;
@@ -616,15 +614,46 @@ footer {
     }
 }
 
-@media only screen and (max-width: 425px){
-    .social {
-        height: 1480px;
+@media only screen and (max-width: 414px) {
+    .ageContainer{
+        background-size: 100% 100%;
+        width: 300px;
+        height: 415px;
+        padding: 20px;
+        top: calc((100vh - 415px) / 2);
+        left: calc((100vw - 300px) / 2);;
     }
-}
 
-@media only screen and (max-width: 425px){
-    .social {
-        height: 1424px;
+    .age-container-text {
+        width: 205px;
+        height: 385px;
+        margin: 25px 0 0 0 ;
+        padding: 10px;
+    }
+
+    #size {
+        font-size: 32px;
+        line-height: 110%;
+        margin-top: 10px;
+    }
+
+    #birthday {
+        font-size: 12px;
+        margin: 15px 0 12px 0;
+    }
+
+    #date-form {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    select {
+        background-color: #f5f5f5;
+        color: #262626;
+    }
+
+    #age-submit {
+        margin: 16px 0 8px 0;
     }
 }
 
@@ -656,5 +685,4 @@ footer {
     #inputZip {
         width: 100%;
     }
-
 }
