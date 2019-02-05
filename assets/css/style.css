@@ -5,6 +5,10 @@
     max-width: 100%;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
