@@ -24,3 +24,7 @@ Google Maps API - Utilized to located local breweries/pubs based on user's locat
 
 # Tasks
 Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projects/2
+
+# Deployed Site
+
+https://shawnholcomb.github.io/Drinkr/
