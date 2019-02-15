@@ -27,4 +27,4 @@ Organized via GitHub Projects https://github.com/shawnholcomb/project-one/projec
 
 # Deployed Site
 
-https://shawnholcomb.github.io/Drinkr/
+https://shawnholcomb.github.io/drinkr/
